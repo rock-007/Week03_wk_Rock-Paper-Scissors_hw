@@ -25,11 +25,9 @@ def playing_with_computer():
 
     winner_name = None
     if request.method =="POST":
-        print(request.form['player_01_name'])
-        print(request.form['gesture_selection'])
+
         winner_name = game_with_computer(request.form['player_01_name'],request.form['gesture_selection'])
-        print(winner_name)
-        print("winner_name")
+
 
     return render_template("computer.html", winner_name=winner_name)
 
