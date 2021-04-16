@@ -7,7 +7,16 @@
     <title>{{result}}</title>
 </head>
 <body>
-    <h1>The winner is</h1>
-    {{result}}
+    {% if winner == True %}
+    <h1>The winner is: {{result}}</h1>
+    
+    {% else %}
+    <h1>
+        PLease insert the player_01 and player_02 gesture selection in the URL
+    </h1>
+    
+    {% endif %}
+    
+    
 </body>
 </html>
