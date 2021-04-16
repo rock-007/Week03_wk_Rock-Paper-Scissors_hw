@@ -39,7 +39,7 @@ def set_computer_game(player_01_name,gesture_selection):
 
 
 def select_randon_gesture():
-        index_number = randrange(5)
+        index_number = randrange(4)
         computer_2.gesture_selection = selection_list[index_number]
 
 
