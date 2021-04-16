@@ -1,0 +1,31 @@
+{% extends "base_computer.html" %}
+
+{% block content %}
+<h1>Hello</h1>
+
+<form action="/play" method="post">
+<label for="player_01" >
+    <input type="text" placeholder="Enter Player_01 name" name="player_01_name" required>
+</label>
+<label for="gesture_selection">
+    <select name="gesture_selection" id="">
+        <option value="Rock">Rock</option>
+        <option value="Scissor">Scissor</option>
+        <option value="Spock">Spock</option>
+        <option value="Lizard">Lizard</option>
+        <option value="Paper">Paper</option>
+    </select>
+</label>
+<input type="submit" value="Submit">
+</form>
+<br>
+
+<input type="text" placeholder="Computer_02" name="Computer_02" disabled>
+<select name="computer_gesture_selection" id="" disabled>
+    <option value="Rock">Random</option>
+</select>
+<br>
+<h2>The winner name is: {{winner_name}}</h2>
+
+
+{% endblock%}

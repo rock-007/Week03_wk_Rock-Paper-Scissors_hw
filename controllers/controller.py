@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template, request
 from app import app
 from models.playing_game import *
 
@@ -18,5 +18,19 @@ def playing_game(player_1_selection, player_2_selection):
     print(result)
 
     return render_template("index.html", result=result, winner= True )
+
+
+@app.route('/play', methods=["GET","POST"])
+def playing_with_computer():
+
+    winner_name = None
+    if request.method =="POST":
+        print(request.form['player_01_name'])
+        print(request.form['gesture_selection'])
+        winner_name = game_with_computer(request.form['player_01_name'],request.form['gesture_selection'])
+        print(winner_name)
+        print("winner_name")
+
+    return render_template("computer.html", winner_name=winner_name)
 
 
