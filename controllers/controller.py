@@ -12,12 +12,10 @@ def index():
 
 @app.route ('/<player_1_selection>/<player_2_selection>')
 def playing_game(player_1_selection, player_2_selection):
-    print(player_1_selection)
 
-    result = play_game(player_1_selection,player_2_selection)
-    print(result)
+    winner_name = play_game(player_1_selection,player_2_selection)
 
-    return render_template("index.html", result=result, winner= True )
+    return render_template("index.html", winner_name=winner_name, winner= True )
 
 
 @app.route('/play', methods=["GET","POST"])
