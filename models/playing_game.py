@@ -11,11 +11,12 @@ Game_01 = Game("first_game",player_1, player_2)
 
 def play_game( player_1_gesture_selection, player_2_gesture_selection):
 
-        if player_1_gesture_selection == 'Rock' and player_2_gesture_selection == 'scissors':
-                
-                return player_1.name
-        elif player_1_gesture_selection== player_2_gesture_selection:
-                return "Draw"
+        for win_combination in Game_01.win_combination:
+                if [player_1_gesture_selection,player_2_gesture_selection] == win_combination:
+                        return player_1.name
+                elif [player_2_gesture_selection, player_1_gesture_selection] == win_combination:
+                        return player_2.name
+
 
 
 
