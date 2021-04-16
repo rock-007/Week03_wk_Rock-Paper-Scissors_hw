@@ -6,13 +6,11 @@ player_1 = Player("Umair")
 
 player_2 = Player("John")
 
-player_3 = None
 
 computer_2 =Player("Robort_02")
 
 Game_01 = Game("first_game",player_1, player_2)
-Game_02 = None
-x= 7
+
 
 
 def set_players_gesture( player_1_gesture_selection, player_2_gesture_selection):
