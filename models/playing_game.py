@@ -1,5 +1,7 @@
 from models.game import Game
 from models.player import Player
+from random import Random, randrange
+
 
 
 player_1 = Player("Umair")
@@ -11,6 +13,7 @@ computer_2 =Player("Robort_02")
 
 Game_01 = Game("first_game",player_1, player_2)
 
+selection_list = ['Rock','Scissor','Lizard', 'Spock','Paper']
 
 
 def set_players_gesture( player_1_gesture_selection, player_2_gesture_selection):
@@ -32,10 +35,13 @@ def play_game( player_1_gesture_selection, player_2_gesture_selection):
 def set_computer_game(player_01_name,gesture_selection):
         player_3 = Player(player_01_name)
         player_3.gesture_selection= gesture_selection
-        computer_2.gesture_selection = "Scissor"
+        select_randon_gesture()
         Game_02 = Game("first_game",player_1, computer_2)
         return Game_02
         
+def select_randon_gesture():
+        index_number = randrange(5)
+        computer_2.gesture_selection = selection_list[index_number]
 
 
 def game_with_computer(player_01_name,gesture_selection):
