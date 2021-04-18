@@ -5,14 +5,14 @@ from models.playing_game import *
 
 @app.route ('/')
 def index():
-    str_arg = "Please insert the player_01 and Player_02 gesture selection in the URL"
 
+    str_arg = "Please insert the player_01 and Player_02 gesture selection in the URL"
+    
     return render_template("index.html", result=str_arg, winner=False)
 
 
 @app.route ('/<player_1_selection>/<player_2_selection>')
 def playing_game(player_1_selection, player_2_selection):
-
 
     return redirect(url_for('result', value_1=player_1_selection, value_2=player_2_selection ))
 
@@ -36,8 +36,6 @@ def playing_with_computer():
     else:
         player_name= None
         player_selection= None 
-
-
 
     return render_template("computer.html",player_name= player_name,player_selection=player_selection, computer_selection= computer_2.gesture_selection, winner_name=winner_name)
 
