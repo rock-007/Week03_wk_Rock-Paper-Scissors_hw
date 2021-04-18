@@ -33,7 +33,7 @@ def set_computer_game(player_01_name,gesture_selection):
         player_3 = Player(player_01_name)
         player_3.gesture_selection= gesture_selection
         select_randon_gesture()
-        Game_02 = Game("first_game",player_1, computer_2)
+        Game_02 = Game("Second_game",player_1, computer_2)
         return Game_02
 
 

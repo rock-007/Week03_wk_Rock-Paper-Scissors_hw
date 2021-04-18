@@ -1,7 +1,7 @@
 {% extends "base_computer.html" %}
 
 {% block content %}
-<h1>Hello</h1>
+<h1> Human  Vs Robort</h1>
 
 <form action="/play" method="post">
 <label for="player_01" >
@@ -25,7 +25,21 @@
     <option value="Rock">Random</option>
 </select>
 <br>
-<h2>The winner name is: {{winner_name}}</h2>
+{% if winner_name != None %}
+<h2>The winner is: <span style=" color:cadetblue"></span> {{winner_name}}</h2>
+    <br>
+    
 
+    <h2>The Players selections were</h2>
+    <ul>
+        <li style="list-style: none;">
+            <h3> {{player_name}} selected <span style=" color:blue">{{player_selection}}</span> </h3>
+        </li>
+        <li style="list-style: none;">
+            <h3>Robort_02 selected  <span style=" color:blueviolet">{{computer_selection}}</span> </h3>
 
+        </li>
+    </ul>
+
+{% endif %}
 {% endblock%}

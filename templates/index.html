@@ -3,12 +3,43 @@
 {% block content %}
 
     {% if winner == True %}
-    <h1>The winner is: {{winner_name}}</h1>
+    <h1 >The winner is: <span style=" color:chartreuse">{{winner_name}}</span></h1>
+    <br>
+    <h2>The Players selections were</h2>
+        <ul>
+            <li style="list-style: none;">
+                <h3>{{player_1.name}} selected <span style=" color:blue">{{value_1}}</span> </h3>
+            </li>
+            <li style="list-style: none;">
+                <h3>{{player_2.name}} selected  <span style=" color:blueviolet">{{value_2}}</span> </h3>
+
+            </li>
+        </ul>
+
+
+
     
     {% else %}
-    <h1>
+    <h1 >
         PLease insert the player_01 and player_02 gesture selection in the URL
     </h1>
+    <h2>Rules:</h2>
+    <h3>The following rules apply when deciding the winner</h3>
+    <ul>
+        <li style="list-style: none;">
+        Paper 😀 covers rock 😒 
+    </li>
+        <li style="list-style: none;">
+        Scissor 😀 cuts paper 😒 
+    </li>
+    <li style="list-style: none;">
+        Rock 😀 beats scissor 😒 
+    </li>
+</ul>
+<h3>The maximum number of players will be Two</h3>
+ <br>
+<h3>You can also play against Computer <a href="/play" ><button >Play</button></a></h3>
+
     
     {% endif %}
     
